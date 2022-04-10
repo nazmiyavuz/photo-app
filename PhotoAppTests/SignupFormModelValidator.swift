@@ -83,4 +83,17 @@ class SignupFormModelValidatorTests: XCTestCase {
         // Assert
         XCTAssertFalse(isLastNameValid, "The isLastNameValid() should have return FALSE for a last name is longer than \(SignupConstants.lastNameMaxLength) characters but it has returned TRUE.")
     }
+    
+    // MARK: - Email
+    
+    func testSignupFormModelValidator_WhenValidEmailProvided_ShouldReturnTrue() {
+        
+        // Arrange
+        // Act
+        let isValidEmailFormat = sut.isValidEmailFormat(email: "nazmi@mail.com")
+        
+        // Assert
+        XCTAssertTrue(isValidEmailFormat, "The isValidEmailFormat() should have return TRUE for a valid email but returned FALSE.")
+    }
+    
 }
