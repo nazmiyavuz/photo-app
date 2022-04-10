@@ -15,6 +15,7 @@
 		409C687328007512003ECC67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409C687128007512003ECC67 /* LaunchScreen.storyboard */; };
 		40EBDCDA2802EBD100C8E72F /* SignupFormModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EBDCD92802EBD100C8E72F /* SignupFormModelValidator.swift */; };
 		40EBDCDC2802ECD000C8E72F /* SignupFormModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EBDCDB2802ECD000C8E72F /* SignupFormModelValidator.swift */; };
+		40EBDCDE2802F47A00C8E72F /* SignupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EBDCDD2802F47A00C8E72F /* SignupConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		40EBDCD02802EB0400C8E72F /* PhotoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EBDCD92802EBD100C8E72F /* SignupFormModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormModelValidator.swift; sourceTree = "<group>"; };
 		40EBDCDB2802ECD000C8E72F /* SignupFormModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormModelValidator.swift; sourceTree = "<group>"; };
+		40EBDCDD2802F47A00C8E72F /* SignupConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				409C687128007512003ECC67 /* LaunchScreen.storyboard */,
 				409C687428007512003ECC67 /* Info.plist */,
 				40EBDCDB2802ECD000C8E72F /* SignupFormModelValidator.swift */,
+				40EBDCDD2802F47A00C8E72F /* SignupConstants.swift */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				409C686B28007511003ECC67 /* ViewController.swift in Sources */,
+				40EBDCDE2802F47A00C8E72F /* SignupConstants.swift in Sources */,
 				409C686728007511003ECC67 /* AppDelegate.swift in Sources */,
 				40EBDCDC2802ECD000C8E72F /* SignupFormModelValidator.swift in Sources */,
 				409C686928007511003ECC67 /* SceneDelegate.swift in Sources */,
