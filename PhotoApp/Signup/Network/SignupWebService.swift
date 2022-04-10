@@ -10,16 +10,20 @@ import Foundation
 class SignupWebService {
     
     private var urlSession: URLSession
+    private var urlString: String?
     
-    init(urlSession: URLSession = .shared) {
+    init(urlString: String?, urlSession: URLSession = .shared) {
+        self.urlString = urlString
         self.urlSession = urlSession
     }
     
-    func signup(withForm formModel: SignupFormRequestModel, completionHandler: @escaping (SignupResponseModel?, SignupErrors?) -> Void) {
-        guard let urlString = Bundle.main.path(forResource: "Dummy", ofType: "json") else {
-            // TODO: Create a unit test to test that a specific error message is returned is URL is nil
+    func signup(withForm formModel: SignupFormRequestModel, completionHandler: @escaping (SignupResponseModel?, SignupError?) -> Void) {
+        
+        guard let urlString = urlString else {
+            completionHandler(nil, SignupError.invalidRequestURLString)
             return
         }
+        
         let url = URL(fileURLWithPath: urlString)
         
         var request = URLRequest(url: url)
@@ -37,7 +41,7 @@ class SignupWebService {
                 completionHandler(signupResponseModel, nil)
             } else {
                 // TODO: Create a new unit test to handle and error here
-                completionHandler(nil, SignupErrors.responseModelParsingError)
+                completionHandler(nil, SignupError.responseModelParsingError)
             }
         }
         
