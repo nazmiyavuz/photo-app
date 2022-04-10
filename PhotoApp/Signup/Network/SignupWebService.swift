@@ -37,6 +37,7 @@ class SignupWebService {
                 completionHandler(signupResponseModel, nil)
             } else {
                 // TODO: Create a new unit test to handle and error here
+                completionHandler(nil, SignupErrors.responseModelParsingError)
             }
         }
         
