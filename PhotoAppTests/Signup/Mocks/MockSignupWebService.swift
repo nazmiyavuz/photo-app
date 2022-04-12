@@ -17,5 +17,8 @@ class MockSignupWebService: SignupWebServiceProtocol {
         
         isSignupMethodCalled = true
         
+        let responseModel = SignupResponseModel(status: "Ok")
+        completionHandler(responseModel, nil)
+        
     }
 }
