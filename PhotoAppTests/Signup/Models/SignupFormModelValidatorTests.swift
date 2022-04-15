@@ -1,5 +1,5 @@
 //
-//  SignupFormModelValidator.swift
+//  SignupFormModelValidatorTests.swift
 //  PhotoAppTests
 //
 //  Created by Nazmi Yavuz on 10.04.2022.
@@ -12,13 +12,21 @@ class SignupFormModelValidatorTests: XCTestCase {
     
     private var sut: SignupFormModelValidator!
     
-    override func setUp() {
+    override func setUpWithError() throws {
         sut = SignupFormModelValidator()
     }
     
-    override func tearDown() {
+    override func tearDownWithError() throws {
         sut = nil
     }
+    
+//    override func setUp() {
+//        sut = SignupFormModelValidator()
+//    }
+//    
+//    override func tearDown() {
+//        sut = nil
+//    }
     
     // MARK: - First Name
 
@@ -51,7 +59,7 @@ class SignupFormModelValidatorTests: XCTestCase {
         // Assert
         XCTAssertFalse(isFirstNameValid, "The isFirstNameValid() should have return FALSE for a first name is longer than \(SignupConstants.firstNameMaxLength) characters but it has returned TRUE.")
     }
-    
+        
     // MARK: - Last Name
     
     func testSignupFormModelValidator_WhenValidLastNameProvided_ShouldReturnTrue() {
@@ -144,5 +152,44 @@ class SignupFormModelValidatorTests: XCTestCase {
         
         // Assert
         XCTAssertFalse(doPasswordsMatch, "The doPasswordsMatch() should have return FALSE for matching passwords but returned TRUE.")
+    }
+    
+    // MARK: - Invalid Characters
+    
+    func testSignupFormModelValidator_NotInvalidCharacters_ThrowsAnError() {
+        // Act and Assert
+        XCTAssertThrowsError(try sut.isNotIllegalCharacters(in: "Nazmi$"), "The isNotInvalidCharacters() should have thrown an error if the texts contains illegal characters.") { error in
+            XCTAssertEqual(error as? SignupError, SignupError.invalidCharactersFound)
+        }
+    }
+    
+    func testSignupFormModelValidator_NotInvalidCharacters_ThrowsAnError2() {
+        do {
+            _ = try sut.isNotIllegalCharacters(in: "Nazmi*")
+            XCTFail("The isNotInvalidCharacters() should have thrown an error if the texts contains illegal characters.")
+        } catch SignupError.invalidCharactersFound {
+            // Successfully passing
+            return
+        } catch {
+            XCTFail("The isNotInvalidCharacters() was supposed to throw an SignupError.invalidCharactersFound Error when illegal characters used. A different error was throwm.")
+            return
+        }
+    }
+    
+    func testSignupFormModelValidator_NotInvalidCharacters_ThrowsNoError() {
+       
+        XCTAssertNoThrow(try sut.isNotIllegalCharacters(in: "Nazmi"), "The isNotInvalidCharacters() should have thrown an error if the text doesn't contains illegal characters.")
+        
+    }
+    
+    func testSignupFormModelValidator_NotInvalidCharacters_ThrowsNoError2() {
+        
+        do {
+            _ = try sut.isNotIllegalCharacters(in: "Nazmi")
+            
+        } catch {
+            // Successfully passing
+            XCTFail("The isNotInvalidCharacters() was not supposed to throw an Error when a valid text was provided.")
+        }
     }
 }

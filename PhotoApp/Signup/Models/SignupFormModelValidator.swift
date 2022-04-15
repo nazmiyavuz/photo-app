@@ -8,6 +8,7 @@
 import Foundation
 
 class SignupFormModelValidator: SignupModelValidatorProtocol {
+    
     // first name
     func isFirstNameValid(firstName: String) -> Bool {
         return !firstName.isEmpty
@@ -33,5 +34,14 @@ class SignupFormModelValidator: SignupModelValidatorProtocol {
     
     func doPasswordsMatch(password: String, repeatPassword: String) -> Bool {
         return password == repeatPassword
+    }
+    
+    // I know that it's not logical but I only wanted to test a func with throws.
+    func isNotIllegalCharacters(in text: String) throws {
+        let invalidCharacters = CharacterSet(charactersIn: "{}[]$%*^&/.,@!?")
+        
+        if text.rangeOfCharacter(from: invalidCharacters) != nil {
+            throw SignupError.invalidCharactersFound
+        }
     }
 }

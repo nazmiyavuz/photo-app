@@ -42,4 +42,12 @@ class MockSignupModelValidator: SignupModelValidatorProtocol {
         return isPasswordEqualityValidated
     }
     
+    func isNotIllegalCharacters(in text: String) throws {
+        let invalidCharacters = CharacterSet(charactersIn: "{}[]$%*^&/.,@!?")
+        
+        if text.rangeOfCharacter(from: invalidCharacters) != nil {
+            throw SignupError.invalidCharactersFound
+        }
+    }
+    
 }

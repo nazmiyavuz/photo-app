@@ -19,5 +19,7 @@ protocol SignupModelValidatorProtocol {
     // password
     func isPasswordValid(password: String) -> Bool
     func doPasswordsMatch(password: String, repeatPassword: String) -> Bool
+    // Illegal Characters
+    func isNotIllegalCharacters(in text: String) throws
     
 }
