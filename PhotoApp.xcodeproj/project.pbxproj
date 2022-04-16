@@ -23,6 +23,8 @@
 		407AFBD8280AFD30001308DF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407AFBD7280AFD30001308DF /* Home.storyboard */; };
 		407AFBDA280AFD4A001308DF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407AFBD9280AFD4A001308DF /* FirstViewController.swift */; };
 		407AFBDC280AFD5B001308DF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407AFBDB280AFD5B001308DF /* SecondViewController.swift */; };
+		407AFBE0280AFEDE001308DF /* ControllersNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407AFBDF280AFEDE001308DF /* ControllersNavigationTests.swift */; };
+		407AFBE2280B0698001308DF /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407AFBE1280B0698001308DF /* SpyNavigationController.swift */; };
 		409C686728007511003ECC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C686628007511003ECC67 /* AppDelegate.swift */; };
 		409C686928007511003ECC67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C686828007511003ECC67 /* SceneDelegate.swift */; };
 		409C686E28007511003ECC67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409C686C28007511003ECC67 /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		407AFBD7280AFD30001308DF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		407AFBD9280AFD4A001308DF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		407AFBDB280AFD5B001308DF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		407AFBDF280AFEDE001308DF /* ControllersNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersNavigationTests.swift; sourceTree = "<group>"; };
+		407AFBE1280B0698001308DF /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
 		409C686328007511003ECC67 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409C686628007511003ECC67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		409C686828007511003ECC67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				40B881D02805C3F900B84BE2 /* SignupViewControllerTests.swift */,
+				407AFBDF280AFEDE001308DF /* ControllersNavigationTests.swift */,
+				407AFBE1280B0698001308DF /* SpyNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,8 +410,10 @@
 			files = (
 				40B881D52805FC7D00B84BE2 /* MockSignupPresenter.swift in Sources */,
 				4056005B28042B3200BD97F9 /* MockSignupWebService.swift in Sources */,
+				407AFBE2280B0698001308DF /* SpyNavigationController.swift in Sources */,
 				406071DE2803255E00BDB458 /* MockURLProtocol.swift in Sources */,
 				40B881D12805C3F900B84BE2 /* SignupViewControllerTests.swift in Sources */,
+				407AFBE0280AFEDE001308DF /* ControllersNavigationTests.swift in Sources */,
 				406071CA28030CCA00BDB458 /* SignupWebServiceTests.swift in Sources */,
 				406071E0280368E700BDB458 /* SignupPresenterTests.swift in Sources */,
 				406071E628036B9F00BDB458 /* MockSignupModelValidator.swift in Sources */,

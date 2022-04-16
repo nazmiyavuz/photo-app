@@ -44,6 +44,12 @@ class SignupViewController: UIViewController {
             repeatPassword: repeatPasswordTextField.text ?? "" )
         
         signupPresenter?.processUserSignup(formModel: signupFormModel)
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let firstVC = storyboard.instantiateViewController(
+            identifier: "FirstViewController") as! FirstViewController
+        self.navigationController?.pushViewController(firstVC, animated: true)
+        
     }
     
 }

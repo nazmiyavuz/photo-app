@@ -9,6 +9,8 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    @IBOutlet weak var nextViewButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
