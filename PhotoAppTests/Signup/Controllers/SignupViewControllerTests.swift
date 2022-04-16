@@ -13,17 +13,14 @@ class SignupViewControllerTests: XCTestCase {
 
     var storyboard: UIStoryboard!
     var sut: SignupViewController!
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    override func setUpWithError() throws {
         storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(identifier: "SignupViewController") as SignupViewController
         sut.loadViewIfNeeded()
-        
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDownWithError() throws {
         storyboard = nil
         sut = nil
     }
@@ -74,4 +71,30 @@ class SignupViewControllerTests: XCTestCase {
         // Assert
         XCTAssertTrue(mockSignupPresenter.processUserSignupCalled, "The processUserSignup() method was not called on a Presenter object when the signup button was tapped in a SignupViewController")
     }
+    
+    func testEmailTextField_WhenCreated_HasEmailAddressContentTypeSet() throws {
+        let emailTextField = try XCTUnwrap(sut.emailTextField, "The emailTextField is not connected to an IBOutlet")
+        
+        XCTAssertEqual(emailTextField.textContentType, .emailAddress, "Email text field does not have email address Content Type set.")
+    }
+    
+    func testEmailTextField_WhenCreated_HasEmailAddressKeyboardTypeSet() throws {
+        let emailTextField = try XCTUnwrap(sut.emailTextField, "The emailTextField is not connected to an IBOutlet")
+        
+        XCTAssertEqual(emailTextField.keyboardType, .emailAddress, "Email text field does not have email address Keyboard Type set.")
+    }
+    
+    func testPasswordTextField_WhenCreated_IsSecureTextEntryField() throws {
+        let passwordTextField = try XCTUnwrap(sut.passwordTextField, "The passwordTextField is not connected to an IBOutlet")
+        
+        XCTAssertEqual(passwordTextField.isSecureTextEntry, true, "Password text field was not empty when the view controller initially loaded")
+    }
+    
+    func testRepeatPasswordTextField_WhenCreated_IsSecureTextEntryField() throws {
+        let repeatPasswordTextField = try XCTUnwrap(sut.repeatPasswordTextField, "The repeatPasswordTextField is not connected to an IBOutlet")
+        
+        XCTAssertEqual(repeatPasswordTextField.isSecureTextEntry, true, "Password text field was not empty when the view controller initially loaded")
+    }
+    
+    
 }
