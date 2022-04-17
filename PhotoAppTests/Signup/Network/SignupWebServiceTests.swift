@@ -25,6 +25,7 @@ class SignupWebServiceTests: XCTestCase {
         
         signFormRequestModel = SignupFormRequestModel(firstName: "Nazmi",
                                                       lastName: "Yavuz",
+                                                      phoneNumber: "5325445544",
                                                       email: "nazmi@mail.com",
                                                       password: "12345678")
         

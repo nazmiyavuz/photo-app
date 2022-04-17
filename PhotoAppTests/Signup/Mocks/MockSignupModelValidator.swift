@@ -11,8 +11,11 @@ import Foundation
 
 class MockSignupModelValidator: SignupModelValidatorProtocol {
     
+    
+    
     var isFirstNameValidated: Bool = false
     var isLastNameValidated: Bool = false
+    var isPhoneNumberValidated: Bool = false
     var isEmailFormatValidated: Bool = false
     var isPasswordValidated: Bool = false
     var isPasswordEqualityValidated: Bool = false
@@ -25,6 +28,11 @@ class MockSignupModelValidator: SignupModelValidatorProtocol {
     func isLastNameValid(lastName: String) -> Bool {
         isLastNameValidated = true
         return isLastNameValidated
+    }
+    
+    func isMobilePhoneNumberValid(number: String) -> Bool {
+        isPhoneNumberValidated = true
+        return isPhoneNumberValidated
     }
     
     func isValidEmailFormat(email: String) -> Bool {

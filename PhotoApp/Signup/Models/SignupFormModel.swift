@@ -9,5 +9,5 @@
 import Foundation
 
 struct SignupFormModel {
-    let firstName, lastName, email, password, repeatPassword: String
+    let firstName, lastName, phoneNumber, email, password, repeatPassword: String
 }

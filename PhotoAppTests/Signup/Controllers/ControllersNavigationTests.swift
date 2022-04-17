@@ -61,7 +61,7 @@ class ControllersNavigationTests: XCTestCase {
         
         sut.signupButton.sendActions(for: .touchUpInside)
         
-        guard let _ = spyNavigationController.pushedViewControler as? FirstViewController else {
+        guard let _ = spyNavigationController.pushedViewController as? FirstViewController else {
             XCTFail()
             return
         }

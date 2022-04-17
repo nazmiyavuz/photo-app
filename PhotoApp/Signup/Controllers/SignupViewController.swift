@@ -39,16 +39,17 @@ class SignupViewController: UIViewController {
         let signupFormModel = SignupFormModel(
             firstName: firstNameTextField.text ?? "",
             lastName: lastNameTextField.text ?? "",
+            phoneNumber: mobilePhoneTextField.text ?? "",
             email: emailTextField.text ?? "",
             password: passwordTextField.text ?? "",
             repeatPassword: repeatPasswordTextField.text ?? "" )
         
         signupPresenter?.processUserSignup(formModel: signupFormModel)
         
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let firstVC = storyboard.instantiateViewController(
-            identifier: "FirstViewController") as! FirstViewController
-        self.navigationController?.pushViewController(firstVC, animated: true)
+//        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//        let firstVC = storyboard.instantiateViewController(
+//            identifier: "FirstViewController") as! FirstViewController
+//        self.navigationController?.pushViewController(firstVC, animated: true)
         
     }
     
@@ -56,11 +57,28 @@ class SignupViewController: UIViewController {
 
 extension SignupViewController: SignupViewDelegateProtocol {
     func successfulSignup() {
-        // TODO:
+        
+        let alert = UIAlertController(
+            title: "Success", message: "the signup operation was successful",
+            preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        DispatchQueue.main.async {
+            alert.view.accessibilityIdentifier = "successAlertDialog"
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func errorHandler(error: SignupError) {
-        // TODO:
+        let alert = UIAlertController(
+            title: "Error", message: "Your request could not be processed at this time",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            alert.view.accessibilityIdentifier = "errorAlertDialog"
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     

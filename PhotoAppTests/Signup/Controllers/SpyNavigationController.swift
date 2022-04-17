@@ -10,11 +10,11 @@ import UIKit
 
 class SpyNavigationController: UINavigationController {
     
-    var pushedViewControler: UIViewController!
+    var pushedViewController: UIViewController!
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
         
-        pushedViewControler = viewController
+        pushedViewController = viewController
     }
 }

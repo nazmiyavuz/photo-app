@@ -8,8 +8,7 @@
 import Foundation
 
 class SignupFormModelValidator: SignupModelValidatorProtocol {
-    
-    // first name
+        // first name
     func isFirstNameValid(firstName: String) -> Bool {
         return !firstName.isEmpty
         && firstName.count >= SignupConstants.firstNameMinLength
@@ -20,6 +19,11 @@ class SignupFormModelValidator: SignupModelValidatorProtocol {
         return !lastName.isEmpty
         && lastName.count >= SignupConstants.lastNameMinLength
         && lastName.count <= SignupConstants.lastNameMaxLength
+    }
+    // mobile Phone
+    func isMobilePhoneNumberValid(number: String) -> Bool {
+        return !number.isEmpty
+        && number.count == SignupConstants.phoneNumberLength
     }
     // email
     func isValidEmailFormat(email: String) -> Bool {

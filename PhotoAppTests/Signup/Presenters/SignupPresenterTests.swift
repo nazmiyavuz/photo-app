@@ -21,6 +21,7 @@ class SignupPresenterTests: XCTestCase {
         // Arrange
         signupFormModel = SignupFormModel(firstName: "Nazmi",
                                           lastName: "Yavuz",
+                                          phoneNumber: "5325445544",
                                           email: "nazmi@mail.com",
                                           password: "12345678",
                                           repeatPassword: "12345678")

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SignupFormRequestModel: Encodable {
-    let firstName, lastName, email, password: String
+struct SignupFormRequestModel: Codable {
+    let firstName, lastName, phoneNumber, email, password: String
 }
